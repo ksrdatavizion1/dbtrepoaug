@@ -1,0 +1,1 @@
+Select CUSTID, FULL_NAME, PHN_NUMBER from {{ ref('customer') }}  -- jinja 
