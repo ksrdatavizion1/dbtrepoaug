@@ -7,9 +7,14 @@ sources:
     tables:
       - name: cust  #logical name 
         identifier: CUSTOMER  #actual table name 
+      - name: sales
+        identifier: sales_transactions
   - name: prod_data
     schema: PROD_SCH
     database: SNOWFLAKE_DBT_DATA
     tables:
       - name: prod
         identifier: PRODUCT
+      - name: del
+        identifier: DELIVERY_STATUS_FACT
+      
