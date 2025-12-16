@@ -47,4 +47,14 @@ models:
     silver:
       +materialized: view
       +database: DBT_LABS_SILVER
+      +schema: Silver_schema
+      +query_tag: DBT_query
+      append_orders:
+        +materialized: incremental
+        +incremental_strategy: append
+      orders_merge:
+        +materialized: incremental
+        +incremental_strategy: merge
+        +unique_key: order_id
+
 

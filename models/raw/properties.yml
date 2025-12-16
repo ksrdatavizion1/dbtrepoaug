@@ -9,6 +9,10 @@ sources:
         identifier: CUSTOMER  #actual table name 
       - name: sales
         identifier: sales_transactions
+      - name : ord
+        identifier: orders
+      - name : supply_chain
+        identifier: SUPPLY_CHAIN_ORDERS
   - name: prod_data
     schema: PROD_SCH
     database: SNOWFLAKE_DBT_DATA
