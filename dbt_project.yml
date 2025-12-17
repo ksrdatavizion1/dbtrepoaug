@@ -56,5 +56,33 @@ models:
         +materialized: incremental
         +incremental_strategy: merge
         +unique_key: order_id
+seeds:
+  my_new_project:
+    +database: DBT_LABS2
+    +schema: RAW_SCHEMA
+    
 
+    country_info:
+      +schema: RAW_SCHEMA
+      +column_types:
+        country_code: varchar(100)
+        country_name: varchar(100)
+        region: varchar(100)
+        currency: varchar(100)
+        language: varchar(100)
 
+    country_population:
+      +schema: PUBLIC
+      +column_types:
+        country_code: varchar(15)
+        population_millions: int
+        gdp_usd_billions: float
+    
+    country_internet:
+      +delimiter: '|'
+      +schema: PUBLIC
+      +column_types:
+        country_code: varchar(100)
+        internet_users_millions: number
+        mobile_subscriptions_millions: number
+        sim_card_prefix: varchar(10)
