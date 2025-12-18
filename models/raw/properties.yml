@@ -41,4 +41,5 @@ sources:
             count: 1
             period: hour
         loaded_at_field: "convert_timezone('UTC',registered_on)"
-      
+      - name : tele_com
+        identifier: TELECOM_PLANS
