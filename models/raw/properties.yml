@@ -43,3 +43,5 @@ sources:
         loaded_at_field: "convert_timezone('UTC',registered_on)"
       - name : tele_com
         identifier: TELECOM_PLANS
+      - name : Sale_data
+        identifier: SALES_ORDERS

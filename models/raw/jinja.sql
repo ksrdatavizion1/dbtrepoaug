@@ -1,7 +1,5 @@
-SELECT
-    plan_id,
-    customer_id,
-    activated_on,
-    validity_days,
-    {{ calculate_expiry('activated_on', 'validity_days') }} AS expiry_date
-FROM {{ source('snowflake_dbt_data', 'tele_com') }}
+{%- set username = "admin_user" -%}
+{%- set environment = "production" -%}
+
+select '{{ var("name") }}' as global_var,
+       '{{ username }}' as user_name

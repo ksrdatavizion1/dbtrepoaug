@@ -86,3 +86,12 @@ seeds:
         internet_users_millions: number
         mobile_subscriptions_millions: number
         sim_card_prefix: varchar(10)
+
+vars:
+  name : KSR                #global variable
+  database_name: SNOWFLAKE_DBT_DATA
+  schema_name: SF_SCHEMA
+  customer_state:
+  plan_type:
+  reporting_year: [2024,2023]
+  reporting_month: [6,7]
