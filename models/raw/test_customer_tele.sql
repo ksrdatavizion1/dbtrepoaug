@@ -1,0 +1,1 @@
+Select * from {{ source('tele_customer', 'TELECOM_CUSTOMERS') }}
