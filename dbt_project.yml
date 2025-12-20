@@ -44,6 +44,17 @@ models:
       +schema: RAW_SCHEMA
       +query_tag: DBT2
       +transient : false
+      +pre-hook:
+        - >
+          INSERT INTO SNOWFLAKE_DBT_DATA.SF_SCHEMA.MODEL_RUN_AUDIT (model_name, execution_time_start)
+          VALUES ('{{ model.name }}', CURRENT_TIMESTAMP);
+      +post-hook:
+        - >
+          UPDATE SNOWFLAKE_DBT_DATA.SF_SCHEMA.MODEL_RUN_AUDIT
+          SET execution_time_end = CURRENT_TIMESTAMP,
+              row_count = (SELECT COUNT(*) FROM {{ this }})
+          WHERE model_name = '{{ model.name }}'
+            AND execution_time_end IS NULL;
     silver:
       +materialized: view
       +database: DBT_LABS_SILVER
